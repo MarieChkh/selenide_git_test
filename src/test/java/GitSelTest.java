@@ -16,11 +16,9 @@ public class GitSelTest {
     }
     @Test
     void checkAssertPage() {
-        // Открыть страницу репозитория Selenide
+
         open("selenide/selenide");
-        // Перейти в раздел Wiki проекта
         $(("#wiki-tab")).click();
-        //Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $("#wiki-content").shouldHave(text("Soft assertions"));
         $("#wiki-content").$(byText("Soft assertions")).click();
         $("#wiki-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
